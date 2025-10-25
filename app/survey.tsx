@@ -5,7 +5,11 @@ import { View , Text, TouchableOpacity,StyleSheet, ScrollView} from "react-nativ
 
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
-export default function Survey() {
+export default function Survey({navigation}: {navigation: any}) {
+
+    const handleSubmit = () => {
+      navigation.navigate("Submitted");
+    }
 
     const[moodValue, setMoodValue] = React.useState<number>(5);
 
@@ -83,7 +87,7 @@ export default function Survey() {
 
           </View>
               
-          <TouchableOpacity style={styles.button} onPress={() => alert("Your results have been submitted.")}>
+          <TouchableOpacity style={styles.button} onPress={handleSubmit}>
             <Text style={styles.buttonText}>Submit Survey</Text>
           </TouchableOpacity>
 
