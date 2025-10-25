@@ -1,13 +1,15 @@
 import { View , Text, TouchableOpacity,StyleSheet} from "react-native";
 
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
 export default function Welcome() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.welcomeText}>Stress Form</Text>
       <TouchableOpacity style={styles.button} onPress={() => alert("Survey started")}>
         <Text style={styles.buttonText}>Start Survey</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
