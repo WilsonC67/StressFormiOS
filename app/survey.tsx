@@ -1,7 +1,7 @@
 import Slider from '@react-native-community/slider';
 import React from 'react';
 
-import { View , Text, TouchableOpacity,StyleSheet} from "react-native";
+import { View , Text, TouchableOpacity,StyleSheet, ScrollView} from "react-native";
 
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -15,157 +15,144 @@ export default function Survey() {
 
     return (
 
-        <SafeAreaView style = {styles.container}>
-        
-        <View style = {styles.sliderBlock}>
+      <SafeAreaView style = {styles.container}>
+
+        <Text style = {styles.bigText}>Daily Survey</Text>
+
+        <ScrollView>
+
+          <View style = {styles.sliderBlock}>
             <Text style = {styles.normalText}>
-                How would you rate your mood today?</Text>
-            
+              How would you rate your mood today?
+            </Text>
+              
+              <Slider style = {styles.slider}
+                step={1}
+                minimumValue={0}
+                maximumValue={10}
+                value = {moodValue}
+                onValueChange={(value) => setMoodValue(value)}
+                minimumTrackTintColor="#00aefeff"
+                maximumTrackTintColor="#00aefeff"
+                thumbTintColor='black'
+              />
+
+            <Text style = {styles.label}>{moodValue}</Text>
+
+          </View>
+
+
+          <View style = {styles.sliderBlock}>
+            <Text style = {styles.normalText}>
+              How would you rate your anxiety level today?
+            </Text>
+              
             <Slider style = {styles.slider}
-            minimumValue={0}
-            maximumValue={10}
-            value = {moodValue}
-            onValueChange={(value) => setMoodValue(value)}
-            step={1}
-            minimumTrackTintColor="#00aefeff"
-            maximumTrackTintColor="#00aefeff"
-            thumbTintColor='black'
+              step={1}
+              minimumValue={0}
+              maximumValue={10}
+              value = {anxietyValue}
+              onValueChange={(value) => setAnxietyValue(value)}
+              minimumTrackTintColor="#00aefeff"
+              maximumTrackTintColor="#00aefeff"
+              thumbTintColor='black'
             />
 
-        <Text style = {styles.label}>{moodValue}</Text>
+            <Text style = {styles.label}>{anxietyValue}</Text>
 
-        </View>
+          </View>
 
 
-
-        <View style = {styles.sliderBlock}>
+          <View style = {styles.sliderBlock}>
             <Text style = {styles.normalText}>
-                How would you rate your anxiety level today?</Text>
-            
+              How would you rate your overall quality of sleep today?
+            </Text>
+              
             <Slider style = {styles.slider}
-            minimumValue={0}
-            maximumValue={10}
-            value = {anxietyValue}
-            onValueChange={(value) => setAnxietyValue(value)}
-            step={1}
-            minimumTrackTintColor="#00aefeff"
-            maximumTrackTintColor="#00aefeff"
-            thumbTintColor='black'
+              step={1}
+              minimumValue={0}
+              maximumValue={10}
+              value = {sleepQualityValue}
+              onValueChange={(value) => setSleepQualityValue(value)}
+              minimumTrackTintColor="#00aefeff"
+              maximumTrackTintColor="#00aefeff"
+              thumbTintColor='black'
             />
 
-        <Text style = {styles.label}>{anxietyValue}</Text>
+            <Text style = {styles.label}>{sleepQualityValue}</Text>
 
-        </View>
+          </View>
+              
+          <TouchableOpacity style={styles.button} onPress={() => alert("Your results have been submitted.")}>
+            <Text style={styles.buttonText}>Submit Survey</Text>
+          </TouchableOpacity>
 
+        </ScrollView>
 
+      </SafeAreaView>
 
-        <View style = {styles.sliderBlock}>
-            <Text style = {styles.normalText}>
-                How would you rate your overall quality of sleep today?</Text>
-            
-            <Slider style = {styles.slider}
-            minimumValue={0}
-            maximumValue={10}
-            value = {sleepQualityValue}
-            onValueChange={(value) => setSleepQualityValue(value)}
-            step={1}
-            minimumTrackTintColor="#00aefeff"
-            maximumTrackTintColor="#00aefeff"
-            thumbTintColor='black'
-            />
-
-        <Text style = {styles.label}>{sleepQualityValue}</Text>
-
-        </View>
-        
-        </SafeAreaView>
-
-        
-        /* How would you rate your mood today? {"\n"}  */
-            
-        
-
-        // {"\n"}
-
-        // {moodValue}
-
-        // {"\n"}
-        // {"\n"}
-
-
-    //     How would you rate your level of anxiety today?
-
-
-    //     {"\n"}
-
-    //     <Slider style = {styles.slider}
-    //         minimumValue={0}
-    //         maximumValue={10}
-    //         value = {anxietyValue}
-    //         onValueChange={(value) => setAnxietyValue(value)}
-    //         step={1}
-    //         minimumTrackTintColor="#00aefeff"
-    //         maximumTrackTintColor="#00aefeff"
-    //         thumbTintColor='white'
-    //     />
-        
-    //     {"\n"}
-
-    //     {anxietyValue}
-
-    //     {"\n"}
-    //     {"\n"}
-
-    //     How would you rate your overall quality of sleep?
-
-    //     {"\n"}
-
-    //     <Slider style = {styles.slider}
-    //         minimumValue={0}
-    //         maximumValue={10}
-    //         value = {sleepQualityValue}
-    //         onValueChange={(value) => setSleepQualityValue(value)}
-    //         step={1}
-    //         minimumTrackTintColor="#00aefeff"
-    //         maximumTrackTintColor="#00aefeff"
-    //         thumbTintColor='white'
-    //     />
-        
-    //     {"\n"}
-
-    //     {sleepQualityValue}
-
-    //     </Text>
-
-    //     </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: "center", 
-    alignItems: "center",     
+    alignItems: "center",  
+    backgroundColor:"white"   
   },
+
   normalText: {
-    fontSize: 32,
-    marginBottom: 60,
+    width: 385,
+    fontSize: 16,
+    marginBottom: 12,
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
+    textAlign:"center",
+    lineHeight: 22,
   },
+
+  bigText: {
+    alignItems: "center",
+    fontSize: 30,
+    marginBottom: 20,
+  },
+
   slider: {
     width: 250, 
     height: 40,
   },
 
   label: {
-    marginBottom: 5,
+    marginBottom: 2,
     fontSize: 16,
+  },
+
+  button: {
+    backgroundColor: "blue", 
+    paddingVertical: 20,
+    paddingHorizontal: 0,
+    borderRadius: 4,
+    elevation: 3,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    marginTop: 20,
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 
   sliderBlock: {
     alignItems: "center", 
-    marginVertical: 20,
+    marginVertical: 5,
   },
+
 })
