@@ -70,6 +70,11 @@ private struct WeeklyCategoryUsageReportHost: View {
           .font(.footnote)
           .foregroundStyle(.secondary)
           .frame(maxWidth: .infinity, alignment: .leading)
+          
+          Text("If you can't see the table, close this sheet and open it again.")
+            .font(.footnote)
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .infinity, alignment: .leading)
 
           DeviceActivityReport(
             DeviceActivityReport.Context(rawValue: "weeklyCategoryUsage"),
