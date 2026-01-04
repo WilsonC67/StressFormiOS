@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useRouter } from "expo-router"; // Added import
 
 export class Question {
   constructor(
@@ -16,7 +17,7 @@ export class Question {
 }
 
 export default function Survey({ navigation }: { navigation: any }) {
-
+  const router = useRouter(); // Initialize router
   const STORAGE_KEY = "testDataCollection";
 
   const questions = [
@@ -25,20 +26,17 @@ export default function Survey({ navigation }: { navigation: any }) {
     new Question(3, "How would you rate your overall quality of sleep today?", 0, 10, 5),
 
     // PSS Questions
-
-    new Question(4, "In the last month, how often have you been upset because of something that happened unexpectedly?", 0, 4, 0),
-    new Question(5, "In the last month, how often have you felt that you were unable to control the important things in your life?", 0, 4, 0),
-    new Question(6, "In the last month, how often have you felt nervous and stressed?", 0, 4, 0),
-    new Question(7, "In the last month, how often have you felt confident about your ability to handle your personal problems?", 0, 4, 0),
-    new Question(8, "In the last month, how often have you felt that things were going your way??", 0, 4, 0),
-    new Question(9, "In the last month, how often have you found that you could not cope with all the things that you had to do?", 0, 4, 0),
-    new Question(10, "In the last month, how often have you been able to control irritations in your life?", 0, 4, 0),
-    new Question(11, "In the last month, how often have you felt that you were on top of things?", 0, 4, 0),
-    new Question(12, "In the last month, how often have you been angered because of things that happened that were outside of your control?", 0, 4, 0),
-    new Question(13, "In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?", 0, 4, 0),
-
+    new Question(4, "In the last week, how often have you been upset because of something that happened unexpectedly?", 0, 4, 0),
+    new Question(5, "In the last week, how often have you felt that you were unable to control the important things in your life?", 0, 4, 0),
+    new Question(6, "In the last week, how often have you felt nervous and stressed?", 0, 4, 0),
+    new Question(7, "In the last week, how often have you felt confident about your ability to handle your personal problems?", 0, 4, 0),
+    new Question(8, "In the last week, how often have you felt that things were going your way??", 0, 4, 0),
+    new Question(9, "In the last week, how often have you found that you could not cope with all the things that you had to do?", 0, 4, 0),
+    new Question(10, "In the last week, how often have you been able to control irritations in your life?", 0, 4, 0),
+    new Question(11, "In the last week, how often have you felt that you were on top of things?", 0, 4, 0),
+    new Question(12, "In the last week, how often have you been angered because of things that happened that were outside of your control?", 0, 4, 0),
+    new Question(13, "In the last week, how often have you felt difficulties were piling up so high that you could not overcome them?", 0, 4, 0),
   ];
-
  
   const [answers, setAnswers] = React.useState(
     Object.fromEntries(questions.map((q) => [q.id, q.defaultValue]))
@@ -57,17 +55,13 @@ export default function Survey({ navigation }: { navigation: any }) {
 
   const formatTimestamp = (isoString: string): string => {
     const date = new Date(isoString);
-
-    const month = date.getMonth() + 1;      // 0–11 → 1–12
+    const month = date.getMonth() + 1;
     const day = date.getDate();
     const year = date.getFullYear();
-
-    // Format time as HH:MM AM/PM
     const hours = date.getHours();
     const minutes = date.getMinutes().toString().padStart(2, "0");
     const ampm = hours >= 12 ? "PM" : "AM";
     const hour12 = hours % 12 || 12;
-
     return `${month}-${day}-${year} ${hour12}:${minutes} ${ampm}`;
   };
 
@@ -87,7 +81,6 @@ export default function Survey({ navigation }: { navigation: any }) {
       const updated = [...parsed, newEntry];
 
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      Alert.alert("Saved!", "Your data has been added to the collection.");
     } catch (err) {
       console.error("Error saving data:", err);
       Alert.alert("Error", "Failed to save data.");
@@ -107,18 +100,16 @@ export default function Survey({ navigation }: { navigation: any }) {
 
       const jsonString = JSON.stringify(data);
       await AsyncStorage.setItem("latestTestData", jsonString);
-
-      console.log("JSON string:", jsonString);
-      console.log("Parsed object:", JSON.parse(jsonString));
     } catch (err) {
       console.error("Error saving data:", err);
     }
   };
 
-  const handleSubmit = () => {
-    handleSaveData();
-    handleData();
-    navigation.navigate("Submitted");
+  const handleSubmit = async () => {
+    await handleSaveData();
+    await handleData();
+
+    router.push("/screen-time-intro");
   };
 
   return (
@@ -126,8 +117,6 @@ export default function Survey({ navigation }: { navigation: any }) {
       <Text style={styles.bigText}>Daily Survey</Text>
 
       <ScrollView>
-
-        {/* Render sliders from Question class */}
         {questions.map((q) => (
           <View key={q.id} style={styles.sliderBlock}>
             <Text style={styles.normalText}>{q.prompt}</Text>
@@ -151,7 +140,7 @@ export default function Survey({ navigation }: { navigation: any }) {
         ))}
 
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Submit Survey</Text>
+          <Text style={styles.buttonText}>Next Step</Text>
         </TouchableOpacity>
 
       </ScrollView>
@@ -176,6 +165,7 @@ const styles = StyleSheet.create({
   bigText: {
     fontSize: 30,
     marginBottom: 20,
+    marginTop: 20,
   },
   slider: {
     width: 250, 
@@ -186,18 +176,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   button: {
-    backgroundColor: "blue", 
-    paddingVertical: 20,
-    borderRadius: 4,
-    elevation: 3,
-    marginTop: 20,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
+  backgroundColor: "#007AFF",
+  paddingVertical: 16,
+  borderRadius: 14,
+  width: "100%",
+  maxWidth: 300,
+  marginTop: 30,
+  marginBottom: 40,
+  alignSelf: "center",
+  shadowColor: "#000",
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.1,
+  shadowRadius: 4,
+  elevation: 2,
+},
+buttonText: {
+  color: "#FFFFFF",
+  fontSize: 17,
+  fontWeight: "600",
+  textAlign: "center",
+},
   sliderBlock: {
     alignItems: "center", 
     marginVertical: 5,

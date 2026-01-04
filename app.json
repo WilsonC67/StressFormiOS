@@ -10,9 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "dev.gearturner.StressForm"
+      "bundleIdentifier": "dev.gearturner.StressForm",
+      "deploymentTarget": "16.6"
+    },
+    "autolinking": {
+      "nativeModulesDir": "./modules",
+      "searchPaths": ["./modules/screen-time-report"]
     },
     "android": {
+      "package": "dev.gearturner.StressForm",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -20,15 +26,18 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "dev.gearturner.StressForm"
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "predictiveBackGestureEnabled": false
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.6"
+          }
+        }
+      ],
       [
         "expo-splash-screen",
         {

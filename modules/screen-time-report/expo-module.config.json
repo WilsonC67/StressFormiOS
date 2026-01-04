@@ -1,0 +1,7 @@
+{
+  "name": "screen-time-report",
+  "platforms": ["apple"],
+  "apple": {
+    "modules": ["ScreenTimeReportModule"]
+  }
+}

@@ -1,7 +1,6 @@
 import Expo
 import React
 import ReactAppDependencyProvider
-import FamilyControls
 
 @UIApplicationMain
 public class AppDelegate: ExpoAppDelegate {
@@ -29,14 +28,7 @@ public class AppDelegate: ExpoAppDelegate {
       in: window,
       launchOptions: launchOptions)
 #endif
-    Task {
-      do {
-        try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
-        print("Family Controls authorized")
-      } catch {
-        print("Family Controls authorization failed:", error)
-      }
-    }
+
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 

@@ -1,87 +1,123 @@
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Platform } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View , Text, TouchableOpacity, StyleSheet, Alert} from "react-native";
 import * as Sharing from "expo-sharing";
 import { File, Paths } from "expo-file-system";
+import { requireNativeModule } from "expo-modules-core";
+import { useRouter } from "expo-router";
 
+const ScreenTimeReport = requireNativeModule("ScreenTimeReport");
 
+interface AppData {
+  usageLast7DaysByCategoryHours?: Record<string, number>;
+  stressData?: any;
+  [key: string]: any;
+}
 
-export default function Welcome({navigation}: {navigation: any}) {
-    const STORAGE_KEY = "testDataCollection";
+export default function Welcome() {
+  const router = useRouter();
+  const STORAGE_KEY = "testDataCollection";
 
-    const handleExportData = async (): Promise<void> => {
-      try {
-        const jsonValue = await AsyncStorage.getItem("testDataCollection");
-        if (!jsonValue) {
-          Alert.alert("No data to export.");
-          return;
-        }
+  const handleExportData = async (): Promise<void> => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(STORAGE_KEY);
+      if (!jsonValue) return Alert.alert("No data to export.");
 
-        const file = new File(Paths.document, `testData_${Date.now()}.json`);
-        await file.write(jsonValue);
+      const filename = `testData_${Date.now()}.json`;
 
+      const file = new File(Paths.document, filename);
+      await file.create({ intermediates: true });
+      await file.write(jsonValue);
+
+      if (await Sharing.isAvailableAsync()) {
         await Sharing.shareAsync(file.uri);
-        console.log("Exported to file:", file.uri);
-      } catch (err) {
-        console.error("Error exporting data:", err);
+      } else {
+        Alert.alert("Sharing not available on this device.");
       }
-    };
+    } catch (err) {
+      console.error("Export Error:", err);
+      Alert.alert("Error", "Failed to export data.");
+    }
+  };
 
-    const handleClearData = async (): Promise<void> => {
-      try {
-        await AsyncStorage.removeItem("testDataCollection");
-        Alert.alert("Cleared", "All saved test data has been removed.");
-      } catch (err) {
-        console.error("Error clearing data:", err);
-        Alert.alert("❌ Error", "Failed to clear data.");
-      }
-    };
-    
+  const handleClearData = async () => {
+    Alert.alert("Confirm Clear", "Delete all saved data?", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Delete",
+        style: "destructive",
+        onPress: async () => {
+          await AsyncStorage.removeItem(STORAGE_KEY);
+          Alert.alert("Success", "Data cleared.");
+        },
+      },
+    ]);
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>Stress Form</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Survey")}>
-        <Text style={styles.buttonText}>Go to Survey</Text>
-      </TouchableOpacity>
+      <Text style={styles.welcomeText}>Welcome!</Text>
 
-      <TouchableOpacity style={styles.button} onPress={handleExportData}>
-        <Text style={styles.buttonText}>Export Data</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button} onPress={handleClearData}>
-        <Text style={styles.buttonText}>Clear Data</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <ActionButton title="Start Survey" onPress={() => router.push("/survey")} color="#007AFF" />
+        <ActionButton title="Export Results" onPress={handleExportData} color="#34C759" />
+        <ActionButton title="Clear Cache" onPress={handleClearData} color="#FF3B30" />
+      </View>
     </View>
   );
 }
 
+const ActionButton = ({
+  title,
+  onPress,
+  color,
+}: {
+  title: string;
+  onPress: () => void;
+  color: string;
+}) => (
+  <TouchableOpacity
+    style={[styles.button, { backgroundColor: color }]}
+    onPress={onPress}
+    activeOpacity={0.7}
+  >
+    <Text style={styles.buttonText}>{title}</Text>
+  </TouchableOpacity>
+);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    backgroundColor: "#F2F2F7",
     alignItems: "center",
-    marginBottom: 100,
-    backgroundColor: "white",
-  }, 
+    justifyContent: "center",
+    padding: 20,
+  },
   welcomeText: {
-    fontSize: 32,
-    fontWeight: "bold",
-    marginBottom: 60,
+    fontSize: 34,
+    fontWeight: "800",
+    color: "#1C1C1E",
+    marginBottom: 40,
+    letterSpacing: -0.5,
+  },
+  buttonContainer: {
+    width: "100%",
+    gap: 12,
   },
   button: {
-    backgroundColor: "blue", 
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    elevation: 3,
+    width: "100%",
+    paddingVertical: 16,
+    borderRadius: 14,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
+    color: "#FFFFFF",
+    fontSize: 17,
+    fontWeight: "600",
     textAlign: "center",
   },
-})
+});

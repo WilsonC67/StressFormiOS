@@ -3,59 +3,121 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		058F081D352694393662A198 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FB08A14616EA68CEEC8738A2 /* PrivacyInfo.xcprivacy */; };
-		1279A2EA9800C1A99D19A083 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD993A34B09B2872224869 /* ExpoModulesProvider.swift */; };
+		0D9ED3727FD665EE00E2587D /* libPods-StressForm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04EAF2FE1B9A140E6892BB3 /* libPods-StressForm.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		158DD2C72F0AE963004F648E /* StressFormReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 158DD2BB2F0AE962004F648E /* StressFormReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		9F8B38242DA7CA258606BBC2 /* libPods-StressForm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED117BC9B926DC31AD81A9A6 /* libPods-StressForm.a */; };
+		90BD42D499A6AE874A71432A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7CD27C25258F5093BB58354C /* PrivacyInfo.xcprivacy */; };
+		972B1D254CC72ECC28E7E5FC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F621708BF15A9B21AA5DCBEF /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		158DD2C52F0AE963004F648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 158DD2BA2F0AE962004F648E;
+			remoteInfo = StressFormReport;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		158DD2CC2F0AE963004F648E /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				158DD2C72F0AE963004F648E /* StressFormReport.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		13B07F961A680F5B00A75B9A /* StressForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StressForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StressForm/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StressForm/Info.plist; sourceTree = "<group>"; };
-		15F681102EF70A42000467C6 /* StressFormRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = StressFormRelease.entitlements; path = StressForm/StressFormRelease.entitlements; sourceTree = "<group>"; };
-		410EB7EC0E8C7783E97A688E /* Pods-StressForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StressForm.release.xcconfig"; path = "Target Support Files/Pods-StressForm/Pods-StressForm.release.xcconfig"; sourceTree = "<group>"; };
-		94DD993A34B09B2872224869 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-StressForm/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		158DD2BB2F0AE962004F648E /* StressFormReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = StressFormReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		58EBF736D28A00CB8490F091 /* Pods-StressForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StressForm.release.xcconfig"; path = "Target Support Files/Pods-StressForm/Pods-StressForm.release.xcconfig"; sourceTree = "<group>"; };
+		666019300EE43D61D87DC7F3 /* Pods-StressForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StressForm.debug.xcconfig"; path = "Target Support Files/Pods-StressForm/Pods-StressForm.debug.xcconfig"; sourceTree = "<group>"; };
+		7CD27C25258F5093BB58354C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = StressForm/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = StressForm/SplashScreen.storyboard; sourceTree = "<group>"; };
+		B04EAF2FE1B9A140E6892BB3 /* libPods-StressForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StressForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		C2B01330918D6C247A646F24 /* Pods-StressForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StressForm.debug.xcconfig"; path = "Target Support Files/Pods-StressForm/Pods-StressForm.debug.xcconfig"; sourceTree = "<group>"; };
-		ED117BC9B926DC31AD81A9A6 /* libPods-StressForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StressForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = StressForm/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* StressForm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "StressForm-Bridging-Header.h"; path = "StressForm/StressForm-Bridging-Header.h"; sourceTree = "<group>"; };
-		FB08A14616EA68CEEC8738A2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = StressForm/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F621708BF15A9B21AA5DCBEF /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-StressForm/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		158DD2C82F0AE963004F648E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 158DD2BA2F0AE962004F648E /* StressFormReport */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		158DD2BC2F0AE963004F648E /* StressFormReport */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (158DD2C82F0AE963004F648E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StressFormReport; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8B38242DA7CA258606BBC2 /* libPods-StressForm.a in Frameworks */,
+				0D9ED3727FD665EE00E2587D /* libPods-StressForm.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158DD2B82F0AE962004F648E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DA29E6ACE74ECF5AE44E564 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				666019300EE43D61D87DC7F3 /* Pods-StressForm.debug.xcconfig */,
+				58EBF736D28A00CB8490F091 /* Pods-StressForm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* StressForm */ = {
 			isa = PBXGroup;
 			children = (
-				15F681102EF70A42000467C6 /* StressFormRelease.entitlements */,
 				F11748412D0307B40044C1D9 /* AppDelegate.swift */,
 				F11748442D0722820044C1D9 /* StressForm-Bridging-Header.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				FB08A14616EA68CEEC8738A2 /* PrivacyInfo.xcprivacy */,
+				7CD27C25258F5093BB58354C /* PrivacyInfo.xcprivacy */,
+			);
+			name = StressForm;
+			sourceTree = "<group>";
+		};
+		14B89A9742D5BCB4107598A3 /* StressForm */ = {
+			isa = PBXGroup;
+			children = (
+				F621708BF15A9B21AA5DCBEF /* ExpoModulesProvider.swift */,
 			);
 			name = StressForm;
 			sourceTree = "<group>";
@@ -64,26 +126,17 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				ED117BC9B926DC31AD81A9A6 /* libPods-StressForm.a */,
+				B04EAF2FE1B9A140E6892BB3 /* libPods-StressForm.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3D456046D2E644EEA55DF11B /* StressForm */ = {
+		2EC477C951E38D088A162145 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				94DD993A34B09B2872224869 /* ExpoModulesProvider.swift */,
+				14B89A9742D5BCB4107598A3 /* StressForm */,
 			);
-			name = StressForm;
-			sourceTree = "<group>";
-		};
-		4055195B04C291D2BF48DC17 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C2B01330918D6C247A646F24 /* Pods-StressForm.debug.xcconfig */,
-				410EB7EC0E8C7783E97A688E /* Pods-StressForm.release.xcconfig */,
-			);
-			path = Pods;
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -98,10 +151,11 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* StressForm */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				158DD2BC2F0AE963004F648E /* StressFormReport */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				4055195B04C291D2BF48DC17 /* Pods */,
-				AF7648C4C80A4A7C53DCB0DF /* ExpoModulesProviders */,
+				0DA29E6ACE74ECF5AE44E564 /* Pods */,
+				2EC477C951E38D088A162145 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -112,16 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* StressForm.app */,
+				158DD2BB2F0AE962004F648E /* StressFormReport.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AF7648C4C80A4A7C53DCB0DF /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				3D456046D2E644EEA55DF11B /* StressForm */,
-			);
-			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -141,22 +188,46 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "StressForm" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				09A897570AC14DF257B16323 /* [Expo] Configure project */,
+				2726D62898F77E59E146EDDC /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				AC029A45A99094A499636322 /* [CP] Embed Pods Frameworks */,
+				6674BD3988A7DF0680089490 /* [CP] Embed Pods Frameworks */,
+				158DD2CC2F0AE963004F648E /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				158DD2C62F0AE963004F648E /* PBXTargetDependency */,
 			);
 			name = StressForm;
 			productName = StressForm;
 			productReference = 13B07F961A680F5B00A75B9A /* StressForm.app */;
 			productType = "com.apple.product-type.application";
+		};
+		158DD2BA2F0AE962004F648E /* StressFormReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158DD2C92F0AE963004F648E /* Build configuration list for PBXNativeTarget "StressFormReport" */;
+			buildPhases = (
+				158DD2B72F0AE962004F648E /* Sources */,
+				158DD2B82F0AE962004F648E /* Frameworks */,
+				158DD2B92F0AE962004F648E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				158DD2BC2F0AE963004F648E /* StressFormReport */,
+			);
+			name = StressFormReport;
+			packageProductDependencies = (
+			);
+			productName = StressFormReport;
+			productReference = 158DD2BB2F0AE962004F648E /* StressFormReport.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -164,10 +235,15 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
+					};
+					158DD2BA2F0AE962004F648E = {
+						CreatedOnToolsVersion = 26.2;
+						LastSwiftMigration = 2620;
 					};
 				};
 			};
@@ -185,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* StressForm */,
+				158DD2BA2F0AE962004F648E /* StressFormReport */,
 			);
 		};
 /* End PBXProject section */
@@ -197,7 +274,14 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				058F081D352694393662A198 /* PrivacyInfo.xcprivacy in Resources */,
+				90BD42D499A6AE874A71432A /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158DD2B92F0AE962004F648E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +327,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		09A897570AC14DF257B16323 /* [Expo] Configure project */ = {
+		2726D62898F77E59E146EDDC /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -266,6 +350,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-StressForm/expo-configure-project.sh\"\n";
+		};
+		6674BD3988A7DF0680089490 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -337,28 +443,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC029A45A99094A499636322 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -367,16 +451,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				1279A2EA9800C1A99D19A083 /* ExpoModulesProvider.swift in Sources */,
+				972B1D254CC72ECC28E7E5FC /* ExpoModulesProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158DD2B72F0AE962004F648E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		158DD2C62F0AE963004F648E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 158DD2BA2F0AE962004F648E /* StressFormReport */;
+			targetProxy = 158DD2C52F0AE963004F648E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2B01330918D6C247A646F24 /* Pods-StressForm.debug.xcconfig */;
+			baseConfigurationReference = 666019300EE43D61D87DC7F3 /* Pods-StressForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -389,7 +488,6 @@
 					"FB_SONARKIT_ENABLED=1",
 				);
 				INFOPLIST_FILE = StressForm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = StressForm;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,15 +512,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 410EB7EC0E8C7783E97A688E /* Pods-StressForm.release.xcconfig */;
+			baseConfigurationReference = 58EBF736D28A00CB8490F091 /* Pods-StressForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = StressForm/StressFormRelease.entitlements;
+				CODE_SIGN_ENTITLEMENTS = StressForm/StressForm.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3RNB989NWN;
 				INFOPLIST_FILE = StressForm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = StressForm;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,6 +538,101 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		158DD2CA2F0AE963004F648E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = StressFormReport/StressFormReport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3RNB989NWN;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StressFormReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StressFormReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gearturner.StressForm.StressFormReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "StressFormReport/StressFormReport-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		158DD2CB2F0AE963004F648E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = StressFormReport/StressFormReport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3RNB989NWN;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StressFormReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StressFormReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.gearturner.StressForm.StressFormReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "StressFormReport/StressFormReport-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -570,6 +762,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		158DD2C92F0AE963004F648E /* Build configuration list for PBXNativeTarget "StressFormReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158DD2CA2F0AE963004F648E /* Debug */,
+				158DD2CB2F0AE963004F648E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
