@@ -13,7 +13,7 @@ export default function RootLayout() {
       <Stack.Screen
         name="welcome"
         options={{
-          title: "Welcome",
+          title: "StressForm",
           headerLeft: () => null,
           headerBackVisible: false,
           gestureEnabled: false,

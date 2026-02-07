@@ -1,18 +1,10 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Alert, Platform } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Sharing from "expo-sharing";
 import { File, Paths } from "expo-file-system";
-import { requireNativeModule } from "expo-modules-core";
 import { useRouter } from "expo-router";
-
-const ScreenTimeReport = requireNativeModule("ScreenTimeReport");
-
-interface AppData {
-  usageLast7DaysByCategoryHours?: Record<string, number>;
-  stressData?: any;
-  [key: string]: any;
-}
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Welcome() {
   const router = useRouter();
@@ -24,7 +16,6 @@ export default function Welcome() {
       if (!jsonValue) return Alert.alert("No data to export.");
 
       const filename = `testData_${Date.now()}.json`;
-
       const file = new File(Paths.document, filename);
       await file.create({ intermediates: true });
       await file.write(jsonValue);
@@ -58,10 +49,35 @@ export default function Welcome() {
     <View style={styles.container}>
       <Text style={styles.welcomeText}>Welcome!</Text>
 
-      <View style={styles.buttonContainer}>
-        <ActionButton title="Start Survey" onPress={() => router.push("/survey")} color="#007AFF" />
-        <ActionButton title="Export Results" onPress={handleExportData} color="#34C759" />
-        <ActionButton title="Clear Cache" onPress={handleClearData} color="#FF3B30" />
+      <View style={styles.gridContainer}>
+        <View style={styles.row}>
+          <ActionButton
+            title="Start Survey"
+            onPress={() => router.push("/survey")}
+            color="#007AFF"
+            icon="clipboard-outline"
+          />
+          <ActionButton
+            title="Export Data"
+            onPress={handleExportData}
+            color="#34C759"
+            icon="share-outline"
+          />
+        </View>
+        <View style={styles.row}>
+          <ActionButton
+            title="Clear Cache"
+            onPress={handleClearData}
+            color="#FF3B30"
+            icon="trash-outline"
+          />
+          <ActionButton
+            title="History"
+            onPress={() => Alert.alert("Coming Soon")}
+            color="#5856D6"
+            icon="time-outline"
+          />
+        </View>
       </View>
     </View>
   );
@@ -71,16 +87,19 @@ const ActionButton = ({
   title,
   onPress,
   color,
+  icon,
 }: {
   title: string;
   onPress: () => void;
   color: string;
+  icon: keyof typeof Ionicons.glyphMap;
 }) => (
   <TouchableOpacity
     style={[styles.button, { backgroundColor: color }]}
     onPress={onPress}
     activeOpacity={0.7}
   >
+    <Ionicons name={icon} size={40} color="white" style={styles.icon} />
     <Text style={styles.buttonText}>{title}</Text>
   </TouchableOpacity>
 );
@@ -89,35 +108,45 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F2F2F7",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingBottom: 40, // Space at the bottom for home indicator
+    paddingTop: 10,
   },
   welcomeText: {
     fontSize: 34,
     fontWeight: "800",
     color: "#1C1C1E",
-    marginBottom: 40,
-    letterSpacing: -0.5,
+    marginBottom: 10,
+    textAlign: "center",
   },
-  buttonContainer: {
-    width: "100%",
-    gap: 12,
+  gridContainer: {
+    flex: 1, // Takes up all remaining vertical space
+    gap: 15,
+  },
+  row: {
+    flex: 1, // Each row takes 50% of the grid height
+    flexDirection: "row",
+    gap: 15,
   },
   button: {
-    width: "100%",
-    paddingVertical: 16,
-    borderRadius: 14,
+    flex: 1, // Each button takes 50% of the row width
+    borderRadius: 24,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  icon: {
+    marginBottom: 12,
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 17,
-    fontWeight: "600",
+    fontSize: 18,
+    fontWeight: "700",
     textAlign: "center",
   },
 });
