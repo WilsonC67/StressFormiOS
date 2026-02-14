@@ -23,10 +23,10 @@ export default function ScreenTimeIntro() {
       
       <View style={styles.instructionBlock}>
         <Text style={styles.text}>
-          We need to check your usage for the week.
+          We need to check your usage for the day.
         </Text>
         <Text style={styles.text}>
-          Tap the button below to view your report. Memorize or write down the values, then come back here to enter them.
+          Tap the button below to view your report. Screenshot or write down the values, then come back here to enter them.
         </Text>
       </View>
 

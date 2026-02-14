@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TextInput, 
-  ScrollView, 
-  TouchableOpacity, 
-  Alert, 
-  KeyboardAvoidingView, 
-  Platform 
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { uploadData } from "@/services/sync";
 import { useRouter } from "expo-router";
 
 const CATEGORIES = [
@@ -31,21 +32,24 @@ const CATEGORIES = [
 export default function ScreenTimeInput() {
   const router = useRouter();
   const STORAGE_KEY = "testDataCollection";
-  
+
   const [inputs, setInputs] = useState<Record<string, string>>({});
 
   const handleInputChange = (key: string, value: string) => {
     if (/^\d*$/.test(value)) {
-      setInputs(prev => ({ ...prev, [key]: value }));
+      setInputs((prev) => ({ ...prev, [key]: value }));
     }
   };
 
   const handleSubmit = async () => {
     try {
-      const processedData = CATEGORIES.reduce((acc, cat) => {
-        acc[cat.key] = parseInt(inputs[cat.key] || "0", 10);
-        return acc;
-      }, {} as Record<string, number>);
+      const processedData = CATEGORIES.reduce(
+        (acc, cat) => {
+          acc[cat.key] = parseInt(inputs[cat.key] || "0", 10);
+          return acc;
+        },
+        {} as Record<string, number>,
+      );
 
       const existingRaw = await AsyncStorage.getItem(STORAGE_KEY);
       if (!existingRaw) {
@@ -59,23 +63,29 @@ export default function ScreenTimeInput() {
         const lastIndex = existingData.length - 1;
         existingData[lastIndex] = {
           ...existingData[lastIndex],
-          manualScreenTime: processedData
+          manualScreenTime: processedData,
         };
-        
+
         await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(existingData));
-        
+
         const latestCache = await AsyncStorage.getItem("latestTestData");
         if (latestCache) {
-            const parsedCache = JSON.parse(latestCache);
-            const updatedCache = { ...parsedCache, manualScreenTime: processedData };
-            await AsyncStorage.setItem("latestTestData", JSON.stringify(updatedCache));
+          const finalData = JSON.parse(latestCache);
+
+          // Upload the final consolidated daily survey
+          const success = await uploadData(finalData);
+          if (!success) {
+            Alert.alert(
+              "Offline",
+              "Survey saved locally. It will sync when connection is restored.",
+            );
+          }
         }
 
         router.push("/submitted");
       } else {
         Alert.alert("Error", "Data format issue.");
       }
-
     } catch (err) {
       console.error(err);
       Alert.alert("Error", "Failed to save screen time data.");
@@ -83,13 +93,18 @@ export default function ScreenTimeInput() {
   };
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={{ flex: 1 }}
     >
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <Text style={styles.header}>Enter Category Minutes</Text>
-        <Text style={styles.subHeader}>Please enter the integer value (minutes) for each category.</Text>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}
+      >
+        <Text style={styles.header}>Enter Category Hours</Text>
+        <Text style={styles.subHeader}>
+          Please enter the hours for each category.
+        </Text>
 
         {CATEGORIES.map((cat) => (
           <View key={cat.key} style={styles.inputRow}>

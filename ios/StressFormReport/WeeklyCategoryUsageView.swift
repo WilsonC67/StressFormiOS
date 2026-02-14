@@ -10,7 +10,7 @@ struct WeeklyCategoryUsageView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Weekly Usage")
+            Text("Daily Usage")
                 .font(.system(size: 16, weight: .bold))
                 .padding(.vertical, 8)
                 .frame(maxWidth: .infinity, alignment: .center)

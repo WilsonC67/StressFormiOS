@@ -53,16 +53,16 @@ private extension UIApplication {
 private struct WeeklyCategoryUsageReportHost: View {
   @Environment(\.dismiss) private var dismiss
 
-  private var last7Days: DateInterval {
+  private var last24Hours: DateInterval {
     let end = Date()
-    let start = Calendar.current.date(byAdding: .day, value: -7, to: end) ?? end.addingTimeInterval(-7 * 24 * 3600)
+    let start = Calendar.current.date(byAdding: .day, value: -1, to: end) ?? end.addingTimeInterval(-24 * 3600)
     return DateInterval(start: start, end: end)
   }
 
   var body: some View {
     NavigationStack {
       VStack(spacing: 12) {
-        Text("Note down or screenshot your weekly usage below.")
+        Text("Note down or screenshot your daily usage below.")
           .font(.headline)
           .frame(maxWidth: .infinity, alignment: .leading)
         
@@ -79,7 +79,7 @@ private struct WeeklyCategoryUsageReportHost: View {
           DeviceActivityReport(
             DeviceActivityReport.Context(rawValue: "weeklyCategoryUsage"),
             filter: DeviceActivityFilter(
-              segment: .daily(during: last7Days), 
+              segment: .daily(during: last24Hours), 
               users: .all,
               devices: .init([.iPhone]),
               applications: [],
@@ -89,7 +89,7 @@ private struct WeeklyCategoryUsageReportHost: View {
           )
       }
       .padding()
-      .navigationTitle("Weekly Usage")
+      .navigationTitle("Daily Usage")
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
           Button("Close") { dismiss() }

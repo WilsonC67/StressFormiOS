@@ -16,10 +16,11 @@ export default function RootLayout() {
           title: "StressForm",
           headerLeft: () => null,
           headerBackVisible: false,
-          gestureEnabled: false,
         }}
       />
-      <Stack.Screen name="survey" options={{ title: "Survey" }} />
+      <Stack.Screen name="daily-survey" options={{ title: "Daily Survey" }} />
+      <Stack.Screen name="weekly-survey" options={{ title: "Weekly Survey" }} />
+
       <Stack.Screen
         name="screen-time-intro"
         options={{ title: "Usage Report" }}
