@@ -15,11 +15,15 @@
     },
     "autolinking": {
       "nativeModulesDir": "./modules",
-      "searchPaths": ["./modules/screen-time-report"]
+      "searchPaths": [
+        "./modules/screen-time-report"
+      ]
     },
     "android": {
       "package": "dev.gearturner.StressForm",
-      "permissions": ["android.permission.PACKAGE_USAGE_STATS"],
+      "permissions": [
+        "android.permission.PACKAGE_USAGE_STATS"
+      ],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -55,6 +59,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c6347ef9-67d4-40a7-9988-dca5d5b4327f"
+      }
     }
   }
 }
