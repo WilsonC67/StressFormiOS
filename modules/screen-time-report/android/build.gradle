@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+group = 'expo.modules.screentime'
+version = '1.0.0'
+
+// 1. Safely get versions from the root project
+def kotlin_version = rootProject.ext.has('kotlinVersion') ? rootProject.ext.get('kotlinVersion') : '1.9.23'
+def safeCompileSdkVersion = rootProject.ext.has('compileSdkVersion') ? rootProject.ext.get('compileSdkVersion') : 36
+def safeMinSdkVersion = rootProject.ext.has('minSdkVersion') ? rootProject.ext.get('minSdkVersion') : 24
+def safeTargetSdkVersion = rootProject.ext.has('targetSdkVersion') ? rootProject.ext.get('targetSdkVersion') : 36
+
+android {
+  compileSdkVersion safeCompileSdkVersion
+  namespace "expo.modules.screentime"
+
+  defaultConfig {
+    minSdkVersion safeMinSdkVersion
+    targetSdkVersion safeTargetSdkVersion
+  }
+}
+
+dependencies {
+  implementation project(':expo-modules-core')
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

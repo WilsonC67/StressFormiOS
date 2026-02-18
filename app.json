@@ -2,7 +2,7 @@
   "expo": {
     "name": "StressForm",
     "slug": "StressForm",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "stressform",
@@ -19,6 +19,7 @@
     },
     "android": {
       "package": "dev.gearturner.StressForm",
+      "permissions": ["android.permission.PACKAGE_USAGE_STATS"],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",

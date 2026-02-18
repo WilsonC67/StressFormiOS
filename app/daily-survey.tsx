@@ -5,46 +5,125 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
+  Platform,
+  Alert,
+  ActivityIndicator,
 } from "react-native";
 import Slider from "@react-native-community/slider";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
+import { requireNativeModule } from "expo-modules-core";
+import { uploadData } from "@/services/sync"; // Imported for Android flow
+
+// Connect to the Native Module
+const ScreenTimeReport = requireNativeModule("ScreenTimeReport");
 
 export default function DailySurvey() {
   const router = useRouter();
   const [answers, setAnswers] = useState({ 1: 5, 2: 5, 3: 5 });
-
-  // daily-survey.tsx
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
+    setLoading(true);
     const data = {
       type: "daily",
       mood: answers[1],
       anxiety: answers[2],
       sleep: answers[3],
       timestamp: new Date().toISOString(),
-      manualScreenTime: {}, // Initialize this so it's ready to be updated
+      manualScreenTime: {}, // Will be populated below for Android
     };
 
     try {
-      const existingRaw = await AsyncStorage.getItem("testDataCollection");
-      let collection = [];
+      // ---------------------------------------------------------
+      // ANDROID SPECIFIC FLOW
+      // ---------------------------------------------------------
+      if (Platform.OS === "android") {
+        // 1. Check/Request Permissions
+        const hasPermission = await ScreenTimeReport.hasAndroidPermission();
+        if (!hasPermission) {
+          Alert.alert(
+            "Permission Required",
+            "To complete the survey, we need access to usage stats to calculate screen time automatically. Please grant access in the settings.",
+            [
+              {
+                text: "Cancel",
+                style: "cancel",
+                onPress: () => setLoading(false),
+              },
+              {
+                text: "Open Settings",
+                onPress: async () => {
+                  await ScreenTimeReport.requestAndroidPermission();
+                  setLoading(false);
+                },
+              },
+            ],
+          );
+          return;
+        }
 
-      if (existingRaw) {
-        collection = JSON.parse(existingRaw);
+        // 2. Get Data (Last 24h, Rounded to nearest hour, Categorized)
+        const androidUsage = await ScreenTimeReport.getAndroidDailyUsage();
+
+        // Populate the key expected by the server
+        data.manualScreenTime = androidUsage;
+
+        // 3. Save Locally
+        const existingRaw = await AsyncStorage.getItem("testDataCollection");
+        let collection = [];
+        if (existingRaw) {
+          collection = JSON.parse(existingRaw);
+        }
+        collection.push(data);
+
+        await AsyncStorage.setItem(
+          "testDataCollection",
+          JSON.stringify(collection),
+        );
+        await AsyncStorage.setItem("latestTestData", JSON.stringify(data));
+
+        // 4. Upload Immediately
+        const success = await uploadData(data);
+        if (!success) {
+          Alert.alert(
+            "Offline",
+            "Survey saved locally. It will sync when connection is restored.",
+          );
+        }
+
+        // 5. Complete
+        setLoading(false);
+        router.push("/submitted");
       }
 
-      collection.push(data);
-      await AsyncStorage.setItem(
-        "testDataCollection",
-        JSON.stringify(collection),
-      );
-      await AsyncStorage.setItem("latestTestData", JSON.stringify(data));
+      // ---------------------------------------------------------
+      // iOS / DEFAULT FLOW
+      // ---------------------------------------------------------
+      else {
+        // iOS Logic: Save partial data and move to manual entry screens
+        const existingRaw = await AsyncStorage.getItem("testDataCollection");
+        let collection = [];
 
-      router.push("/screen-time-intro");
+        if (existingRaw) {
+          collection = JSON.parse(existingRaw);
+        }
+
+        collection.push(data);
+        await AsyncStorage.setItem(
+          "testDataCollection",
+          JSON.stringify(collection),
+        );
+        await AsyncStorage.setItem("latestTestData", JSON.stringify(data));
+
+        setLoading(false);
+        router.push("/screen-time-intro");
+      }
     } catch (err) {
       console.error("Failed to save daily survey:", err);
+      Alert.alert("Error", "An error occurred saving your survey.");
+      setLoading(false);
     }
   };
 
@@ -72,8 +151,20 @@ export default function DailySurvey() {
           </View>
         ))}
 
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Next: Screen Time</Text>
+        <TouchableOpacity
+          style={[styles.button, loading && styles.buttonDisabled]}
+          onPress={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? (
+            <ActivityIndicator color="white" />
+          ) : (
+            <Text style={styles.buttonText}>
+              {Platform.OS === "android"
+                ? "Submit Survey"
+                : "Next: Screen Time"}
+            </Text>
+          )}
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -90,6 +181,10 @@ const styles = StyleSheet.create({
     padding: 18,
     borderRadius: 15,
     width: 250,
+    alignItems: "center",
+  },
+  buttonDisabled: {
+    backgroundColor: "#999",
   },
   buttonText: { color: "white", textAlign: "center", fontWeight: "bold" },
 });

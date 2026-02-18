@@ -1,7 +1,11 @@
 {
   "name": "screen-time-report",
-  "platforms": ["apple"],
+  "platforms": ["apple", "android"],
   "apple": {
     "modules": ["ScreenTimeReportModule"]
+  },
+  "android": {
+    "package": "expo.modules.screentime",
+    "modules": ["expo.modules.screentime.ScreenTimeReportModule"]
   }
 }
