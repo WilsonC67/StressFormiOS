@@ -31,8 +31,6 @@ export default function WeeklySurvey() {
   const [answers, setAnswers] = useState(Array(10).fill(0));
 
   const handleSubmit = async () => {
-    // Logic: Reverse scores for index 3, 4, 6, and 7 (Questions 4, 5, 7, 8)
-    // 0=4, 1=3, 2=2, 3=1, 4=0
     const calculatedScores = answers.map((val, index) => {
       const questionNumber = index + 1;
       if ([4, 5, 7, 8].includes(questionNumber)) {
@@ -53,7 +51,6 @@ export default function WeeklySurvey() {
 
     await AsyncStorage.setItem("latestTestData", JSON.stringify(data));
 
-    // 2. Upload to Linode
     const success = await uploadData(data);
     if (!success) {
       Alert.alert(

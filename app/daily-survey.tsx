@@ -14,9 +14,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { requireNativeModule } from "expo-modules-core";
-import { uploadData } from "@/services/sync"; // Imported for Android flow
+import { uploadData } from "@/services/sync";
 
-// Connect to the Native Module
 const ScreenTimeReport = requireNativeModule("ScreenTimeReport");
 
 export default function DailySurvey() {
@@ -32,15 +31,11 @@ export default function DailySurvey() {
       anxiety: answers[2],
       sleep: answers[3],
       timestamp: new Date().toISOString(),
-      manualScreenTime: {}, // Will be populated below for Android
+      manualScreenTime: {},
     };
 
     try {
-      // ---------------------------------------------------------
-      // ANDROID SPECIFIC FLOW
-      // ---------------------------------------------------------
       if (Platform.OS === "android") {
-        // 1. Check/Request Permissions
         const hasPermission = await ScreenTimeReport.hasAndroidPermission();
         if (!hasPermission) {
           Alert.alert(
@@ -64,13 +59,10 @@ export default function DailySurvey() {
           return;
         }
 
-        // 2. Get Data (Last 24h, Rounded to nearest hour, Categorized)
         const androidUsage = await ScreenTimeReport.getAndroidDailyUsage();
 
-        // Populate the key expected by the server
         data.manualScreenTime = androidUsage;
 
-        // 3. Save Locally
         const existingRaw = await AsyncStorage.getItem("testDataCollection");
         let collection = [];
         if (existingRaw) {
@@ -84,7 +76,6 @@ export default function DailySurvey() {
         );
         await AsyncStorage.setItem("latestTestData", JSON.stringify(data));
 
-        // 4. Upload Immediately
         const success = await uploadData(data);
         if (!success) {
           Alert.alert(
@@ -93,16 +84,11 @@ export default function DailySurvey() {
           );
         }
 
-        // 5. Complete
         setLoading(false);
         router.push("/submitted");
       }
-
-      // ---------------------------------------------------------
-      // iOS / DEFAULT FLOW
-      // ---------------------------------------------------------
       else {
-        // iOS Logic: Save partial data and move to manual entry screens
+        // ios
         const existingRaw = await AsyncStorage.getItem("testDataCollection");
         let collection = [];
 

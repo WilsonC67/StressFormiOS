@@ -7,7 +7,7 @@ export const getOrCreateUserId = async () => {
     let userId = await AsyncStorage.getItem(USER_ID_KEY);
 
     if (!userId) {
-      // First time opening the app: Use current timestamp as ID
+      // use current timestamp as ID
       userId = Date.now().toString();
       await AsyncStorage.setItem(USER_ID_KEY, userId);
       console.log("First launch! Created User ID:", userId);

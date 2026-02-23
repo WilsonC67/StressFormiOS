@@ -7,7 +7,6 @@ export default function Submitted() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            // Use replace so the user can't go back to the submitted screen
             router.replace("/welcome"); 
         }, 2000);
 
