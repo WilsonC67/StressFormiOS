@@ -65,14 +65,17 @@ export default function ScreenTimeInput() {
           ...existingData[lastIndex],
           manualScreenTime: processedData,
         };
-
         await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(existingData));
 
         const latestCache = await AsyncStorage.getItem("latestTestData");
         if (latestCache) {
           const finalData = JSON.parse(latestCache);
+          finalData.manualScreenTime = processedData;
+          await AsyncStorage.setItem(
+            "latestTestData",
+            JSON.stringify(finalData),
+          );
 
-          // Upload the final consolidated daily survey
           const success = await uploadData(finalData);
           if (!success) {
             Alert.alert(
