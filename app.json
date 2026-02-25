@@ -11,15 +11,20 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "dev.gearturner.StressForm",
-      "deploymentTarget": "16.6"
+      "deploymentTarget": "16.6",
+      "buildNumber": "2"
     },
     "autolinking": {
       "nativeModulesDir": "./modules",
-      "searchPaths": ["./modules/screen-time-report"]
+      "searchPaths": [
+        "./modules/screen-time-report"
+      ]
     },
     "android": {
       "package": "dev.gearturner.StressForm",
-      "permissions": ["android.permission.PACKAGE_USAGE_STATS"],
+      "permissions": [
+        "android.permission.PACKAGE_USAGE_STATS"
+      ],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -28,7 +33,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "versionCode": 2
+      "versionCode": 3
     },
     "plugins": [
       "expo-router",
