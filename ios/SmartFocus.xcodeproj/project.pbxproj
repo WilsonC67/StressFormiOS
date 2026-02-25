@@ -3,38 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D9ED3727FD665EE00E2587D /* libPods-StressForm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04EAF2FE1B9A140E6892BB3 /* libPods-StressForm.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		158DD2C72F0AE963004F648E /* StressFormReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 158DD2BB2F0AE962004F648E /* StressFormReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		15623C222F4F44630043EEB0 /* StressFormReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 15623C162F4F44630043EEB0 /* StressFormReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		90BD42D499A6AE874A71432A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7CD27C25258F5093BB58354C /* PrivacyInfo.xcprivacy */; };
-		972B1D254CC72ECC28E7E5FC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F621708BF15A9B21AA5DCBEF /* ExpoModulesProvider.swift */; };
+		898903BFA32CE9D55D2F890A /* libPods-SmartFocus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A98B9668DFAAE3391175C0 /* libPods-SmartFocus.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		C0CB4ACF3E2FA95C6693A977 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EB7955E36C6C3E39EE9EFE5D /* PrivacyInfo.xcprivacy */; };
+		D8FF0AA10DEA5F1C3C22EB15 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C0D86EC763AFEEA919CB0 /* ExpoModulesProvider.swift */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		158DD2C52F0AE963004F648E /* PBXContainerItemProxy */ = {
+		15623C202F4F44630043EEB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 158DD2BA2F0AE962004F648E;
+			remoteGlobalIDString = 15623C152F4F44630043EEB0;
 			remoteInfo = StressFormReport;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		158DD2CC2F0AE963004F648E /* Embed ExtensionKit Extensions */ = {
+		15623C232F4F44630043EEB0 /* Embed ExtensionKit Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				158DD2C72F0AE963004F648E /* StressFormReport.appex in Embed ExtensionKit Extensions */,
+				15623C222F4F44630043EEB0 /* StressFormReport.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,45 +42,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* StressForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StressForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StressForm/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StressForm/Info.plist; sourceTree = "<group>"; };
-		158DD2BB2F0AE962004F648E /* StressFormReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = StressFormReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		58EBF736D28A00CB8490F091 /* Pods-StressForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StressForm.release.xcconfig"; path = "Target Support Files/Pods-StressForm/Pods-StressForm.release.xcconfig"; sourceTree = "<group>"; };
-		666019300EE43D61D87DC7F3 /* Pods-StressForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StressForm.debug.xcconfig"; path = "Target Support Files/Pods-StressForm/Pods-StressForm.debug.xcconfig"; sourceTree = "<group>"; };
-		7CD27C25258F5093BB58354C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = StressForm/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = StressForm/SplashScreen.storyboard; sourceTree = "<group>"; };
-		B04EAF2FE1B9A140E6892BB3 /* libPods-StressForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StressForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* SmartFocus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartFocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SmartFocus/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartFocus/Info.plist; sourceTree = "<group>"; };
+		15623C162F4F44630043EEB0 /* StressFormReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = StressFormReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		186C0D86EC763AFEEA919CB0 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-SmartFocus/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		45B705186CD199227F52B0E5 /* Pods-SmartFocus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFocus.release.xcconfig"; path = "Target Support Files/Pods-SmartFocus/Pods-SmartFocus.release.xcconfig"; sourceTree = "<group>"; };
+		6D29A00E829909C644DD50A8 /* Pods-SmartFocus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartFocus.debug.xcconfig"; path = "Target Support Files/Pods-SmartFocus/Pods-SmartFocus.debug.xcconfig"; sourceTree = "<group>"; };
+		94A98B9668DFAAE3391175C0 /* libPods-SmartFocus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartFocus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = SmartFocus/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		EB7955E36C6C3E39EE9EFE5D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = SmartFocus/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = StressForm/AppDelegate.swift; sourceTree = "<group>"; };
-		F11748442D0722820044C1D9 /* StressForm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "StressForm-Bridging-Header.h"; path = "StressForm/StressForm-Bridging-Header.h"; sourceTree = "<group>"; };
-		F621708BF15A9B21AA5DCBEF /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-StressForm/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartFocus/AppDelegate.swift; sourceTree = "<group>"; };
+		F11748442D0722820044C1D9 /* SmartFocus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SmartFocus-Bridging-Header.h"; path = "SmartFocus/SmartFocus-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		158DD2C82F0AE963004F648E /* Exceptions for "StressFormReport" folder in "StressFormReport" target */ = {
+		15623C262F4F44630043EEB0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 158DD2BA2F0AE962004F648E /* StressFormReport */;
+			target = 15623C152F4F44630043EEB0 /* StressFormReport */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		158DD2BC2F0AE963004F648E /* StressFormReport */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				158DD2C82F0AE963004F648E /* Exceptions for "StressFormReport" folder in "StressFormReport" target */,
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = StressFormReport;
-			sourceTree = "<group>";
-		};
+		15623C172F4F44630043EEB0 /* StressFormReport */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (15623C262F4F44630043EEB0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StressFormReport; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +77,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D9ED3727FD665EE00E2587D /* libPods-StressForm.a in Frameworks */,
+				898903BFA32CE9D55D2F890A /* libPods-SmartFocus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		158DD2B82F0AE962004F648E /* Frameworks */ = {
+		15623C132F4F44630043EEB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,52 +91,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DA29E6ACE74ECF5AE44E564 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				666019300EE43D61D87DC7F3 /* Pods-StressForm.debug.xcconfig */,
-				58EBF736D28A00CB8490F091 /* Pods-StressForm.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		13B07FAE1A68108700A75B9A /* StressForm */ = {
+		13B07FAE1A68108700A75B9A /* SmartFocus */ = {
 			isa = PBXGroup;
 			children = (
 				F11748412D0307B40044C1D9 /* AppDelegate.swift */,
-				F11748442D0722820044C1D9 /* StressForm-Bridging-Header.h */,
+				F11748442D0722820044C1D9 /* SmartFocus-Bridging-Header.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				7CD27C25258F5093BB58354C /* PrivacyInfo.xcprivacy */,
+				EB7955E36C6C3E39EE9EFE5D /* PrivacyInfo.xcprivacy */,
 			);
-			name = StressForm;
-			sourceTree = "<group>";
-		};
-		14B89A9742D5BCB4107598A3 /* StressForm */ = {
-			isa = PBXGroup;
-			children = (
-				F621708BF15A9B21AA5DCBEF /* ExpoModulesProvider.swift */,
-			);
-			name = StressForm;
+			name = SmartFocus;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				B04EAF2FE1B9A140E6892BB3 /* libPods-StressForm.a */,
+				94A98B9668DFAAE3391175C0 /* libPods-SmartFocus.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2EC477C951E38D088A162145 /* ExpoModulesProviders */ = {
+		60067D1CE108E9745D6F2B98 /* SmartFocus */ = {
 			isa = PBXGroup;
 			children = (
-				14B89A9742D5BCB4107598A3 /* StressForm */,
+				186C0D86EC763AFEEA919CB0 /* ExpoModulesProvider.swift */,
 			);
-			name = ExpoModulesProviders;
+			name = SmartFocus;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -160,13 +132,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* StressForm */,
+				13B07FAE1A68108700A75B9A /* SmartFocus */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				158DD2BC2F0AE963004F648E /* StressFormReport */,
+				15623C172F4F44630043EEB0 /* StressFormReport */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				0DA29E6ACE74ECF5AE44E564 /* Pods */,
-				2EC477C951E38D088A162145 /* ExpoModulesProviders */,
+				9218242DCDC67B1A53811A9B /* Pods */,
+				8BEDF4DC045408069CB9010C /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -176,10 +148,27 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* StressForm.app */,
-				158DD2BB2F0AE962004F648E /* StressFormReport.appex */,
+				13B07F961A680F5B00A75B9A /* SmartFocus.app */,
+				15623C162F4F44630043EEB0 /* StressFormReport.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8BEDF4DC045408069CB9010C /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				60067D1CE108E9745D6F2B98 /* SmartFocus */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
+		9218242DCDC67B1A53811A9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D29A00E829909C644DD50A8 /* Pods-SmartFocus.debug.xcconfig */,
+				45B705186CD199227F52B0E5 /* Pods-SmartFocus.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -188,54 +177,56 @@
 				BB2F792C24A3F905000567C9 /* Expo.plist */,
 			);
 			name = Supporting;
-			path = StressForm/Supporting;
+			path = SmartFocus/Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* StressForm */ = {
+		13B07F861A680F5B00A75B9A /* SmartFocus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "StressForm" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartFocus" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				2726D62898F77E59E146EDDC /* [Expo] Configure project */,
+				FF8D4AD46FACCD3AA9637C55 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				6674BD3988A7DF0680089490 /* [CP] Embed Pods Frameworks */,
-				158DD2CC2F0AE963004F648E /* Embed ExtensionKit Extensions */,
+				42CE428E4E0692F771BCCB5C /* [CP] Embed Pods Frameworks */,
+				15623C232F4F44630043EEB0 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				158DD2C62F0AE963004F648E /* PBXTargetDependency */,
+				15623C212F4F44630043EEB0 /* PBXTargetDependency */,
 			);
-			name = StressForm;
-			productName = StressForm;
-			productReference = 13B07F961A680F5B00A75B9A /* StressForm.app */;
+			name = SmartFocus;
+			productName = SmartFocus;
+			productReference = 13B07F961A680F5B00A75B9A /* SmartFocus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		158DD2BA2F0AE962004F648E /* StressFormReport */ = {
+		15623C152F4F44630043EEB0 /* StressFormReport */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 158DD2C92F0AE963004F648E /* Build configuration list for PBXNativeTarget "StressFormReport" */;
+			buildConfigurationList = 15623C272F4F44630043EEB0 /* Build configuration list for PBXNativeTarget "StressFormReport" */;
 			buildPhases = (
-				158DD2B72F0AE962004F648E /* Sources */,
-				158DD2B82F0AE962004F648E /* Frameworks */,
-				158DD2B92F0AE962004F648E /* Resources */,
+				15623C122F4F44630043EEB0 /* Sources */,
+				15623C132F4F44630043EEB0 /* Frameworks */,
+				15623C142F4F44630043EEB0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				158DD2BC2F0AE963004F648E /* StressFormReport */,
+				15623C172F4F44630043EEB0 /* StressFormReport */,
 			);
 			name = StressFormReport;
+			packageProductDependencies = (
+			);
 			productName = StressFormReport;
-			productReference = 158DD2BB2F0AE962004F648E /* StressFormReport.appex */;
+			productReference = 15623C162F4F44630043EEB0 /* StressFormReport.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
 /* End PBXNativeTarget section */
@@ -244,20 +235,18 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
 					};
-					158DD2BA2F0AE962004F648E = {
+					15623C152F4F44630043EEB0 = {
 						CreatedOnToolsVersion = 26.2;
-						LastSwiftMigration = 2620;
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "StressForm" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SmartFocus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,8 +259,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* StressForm */,
-				158DD2BA2F0AE962004F648E /* StressFormReport */,
+				13B07F861A680F5B00A75B9A /* SmartFocus */,
+				15623C152F4F44630043EEB0 /* StressFormReport */,
 			);
 		};
 /* End PBXProject section */
@@ -284,11 +273,11 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				90BD42D499A6AE874A71432A /* PrivacyInfo.xcprivacy in Resources */,
+				C0CB4ACF3E2FA95C6693A977 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		158DD2B92F0AE962004F648E /* Resources */ = {
+		15623C142F4F44630043EEB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,44 +319,20 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StressForm-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SmartFocus-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2726D62898F77E59E146EDDC /* [Expo] Configure project */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/.xcode.env",
-				"$(SRCROOT)/.xcode.env.local",
-				"$(SRCROOT)/StressForm/StressForm.entitlements",
-				"$(SRCROOT)/Pods/Target Support Files/Pods-StressForm/expo-configure-project.sh",
-			);
-			name = "[Expo] Configure project";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/Pods/Target Support Files/Pods-StressForm/ExpoModulesProvider.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-StressForm/expo-configure-project.sh\"\n";
-		};
-		6674BD3988A7DF0680089490 /* [CP] Embed Pods Frameworks */ = {
+		42CE428E4E0692F771BCCB5C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFocus/Pods-SmartFocus-frameworks.sh",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
@@ -380,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFocus/Pods-SmartFocus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
@@ -389,7 +354,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartFocus/Pods-SmartFocus-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
@@ -450,8 +415,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StressForm/Pods-StressForm-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartFocus/Pods-SmartFocus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FF8D4AD46FACCD3AA9637C55 /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env",
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/SmartFocus/SmartFocus.entitlements",
+				"$(SRCROOT)/Pods/Target Support Files/Pods-SmartFocus/expo-configure-project.sh",
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Pods/Target Support Files/Pods-SmartFocus/ExpoModulesProvider.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-SmartFocus/expo-configure-project.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -461,11 +450,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				972B1D254CC72ECC28E7E5FC /* ExpoModulesProvider.swift in Sources */,
+				D8FF0AA10DEA5F1C3C22EB15 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		158DD2B72F0AE962004F648E /* Sources */ = {
+		15623C122F4F44630043EEB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,36 +464,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		158DD2C62F0AE963004F648E /* PBXTargetDependency */ = {
+		15623C212F4F44630043EEB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 158DD2BA2F0AE962004F648E /* StressFormReport */;
-			targetProxy = 158DD2C52F0AE963004F648E /* PBXContainerItemProxy */;
+			target = 15623C152F4F44630043EEB0 /* StressFormReport */;
+			targetProxy = 15623C202F4F44630043EEB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 666019300EE43D61D87DC7F3 /* Pods-StressForm.debug.xcconfig */;
+			baseConfigurationReference = 6D29A00E829909C644DD50A8 /* Pods-SmartFocus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = StressForm/StressForm.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SmartFocus/SmartFocus.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3RNB989NWN;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = StressForm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = StressForm;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_FILE = SmartFocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -512,8 +500,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gearturner.StressForm;
-				PRODUCT_NAME = StressForm;
-				SWIFT_OBJC_BRIDGING_HEADER = "StressForm/StressForm-Bridging-Header.h";
+				PRODUCT_NAME = SmartFocus;
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartFocus/SmartFocus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,21 +511,20 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58EBF736D28A00CB8490F091 /* Pods-StressForm.release.xcconfig */;
+			baseConfigurationReference = 45B705186CD199227F52B0E5 /* Pods-SmartFocus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = StressForm/StressForm.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SmartFocus/SmartFocus.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = StressForm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = StressForm;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				DEVELOPMENT_TEAM = 3RNB989NWN;
+				INFOPLIST_FILE = SmartFocus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -545,22 +532,21 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gearturner.StressForm;
-				PRODUCT_NAME = StressForm;
-				SWIFT_OBJC_BRIDGING_HEADER = "StressForm/StressForm-Bridging-Header.h";
+				PRODUCT_NAME = SmartFocus;
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartFocus/SmartFocus-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
-		158DD2CA2F0AE963004F648E /* Debug */ = {
+		15623C242F4F44630043EEB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -569,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3RNB989NWN;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -582,10 +569,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gearturner.StressForm.StressFormReport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -593,7 +579,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "StressFormReport/StressFormReport-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -601,14 +586,13 @@
 			};
 			name = Debug;
 		};
-		158DD2CB2F0AE963004F648E /* Release */ = {
+		15623C252F4F44630043EEB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -618,6 +602,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3RNB989NWN;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -631,9 +616,8 @@
 					"@executable_path/../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.gearturner.StressForm.StressFormReport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -641,7 +625,6 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "StressFormReport/StressFormReport-Bridging-Header.h";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -671,7 +654,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -679,7 +661,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 3RNB989NWN;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -707,7 +688,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
@@ -737,7 +717,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -745,7 +724,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = 3RNB989NWN;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -765,8 +743,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
@@ -776,7 +752,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "StressForm" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartFocus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -785,16 +761,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		158DD2C92F0AE963004F648E /* Build configuration list for PBXNativeTarget "StressFormReport" */ = {
+		15623C272F4F44630043EEB0 /* Build configuration list for PBXNativeTarget "StressFormReport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				158DD2CA2F0AE963004F648E /* Debug */,
-				158DD2CB2F0AE963004F648E /* Release */,
+				15623C242F4F44630043EEB0 /* Debug */,
+				15623C252F4F44630043EEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "StressForm" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SmartFocus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
