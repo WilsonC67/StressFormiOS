@@ -80,7 +80,11 @@ export default function WeeklySurvey() {
                 setAnswers(newAns);
               }}
             />
-            <Text style={styles.valueDisplay}>{answers[i]}</Text>
+            <View style={styles.labelContainer}>
+              <Text style={styles.caption}>Never</Text>
+              <Text style={styles.valueDisplay}>{answers[i]}</Text>
+              <Text style={styles.caption}>Very Often</Text>
+            </View>
           </View>
         ))}
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
@@ -113,7 +117,6 @@ const styles = StyleSheet.create({
     color: "#3A3A3C",
   },
   valueDisplay: {
-    textAlign: "center",
     fontSize: 20,
     fontWeight: "bold",
     color: "#007AFF",
@@ -130,5 +133,16 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 18,
+  },
+  labelContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 5,
+  },
+  caption: {
+    fontSize: 12,
+    color: "#8E8E93",
+    width: 80,
   },
 });

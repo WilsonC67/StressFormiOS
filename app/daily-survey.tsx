@@ -86,8 +86,7 @@ export default function DailySurvey() {
 
         setLoading(false);
         router.push("/submitted");
-      }
-      else {
+      } else {
         // ios
         const existingRaw = await AsyncStorage.getItem("testDataCollection");
         let collection = [];
@@ -119,9 +118,27 @@ export default function DailySurvey() {
         <Text style={styles.header}>Daily Check-in</Text>
 
         {[
-          { id: 1, label: "How is your mood today?", max: 10 },
-          { id: 2, label: "How anxious are you today?", max: 10 },
-          { id: 3, label: "How well did you sleep last night?", max: 10 },
+          {
+            id: 1,
+            label: "How is your mood today?",
+            max: 10,
+            low: "Poor",
+            high: "Excellent",
+          },
+          {
+            id: 2,
+            label: "How anxious are you today?",
+            max: 10,
+            low: "Not at all",
+            high: "Extremely",
+          },
+          {
+            id: 3,
+            label: "How well did you sleep last night?",
+            max: 10,
+            low: "Poorly",
+            high: "Great",
+          },
         ].map((q) => (
           <View key={q.id} style={styles.block}>
             <Text style={styles.label}>{q.label}</Text>
@@ -133,7 +150,13 @@ export default function DailySurvey() {
               value={answers[q.id as keyof typeof answers]}
               onValueChange={(v) => setAnswers({ ...answers, [q.id]: v })}
             />
-            <Text>{answers[q.id as keyof typeof answers]}</Text>
+            <View style={styles.labelContainer}>
+              <Text style={styles.caption}>{q.low}</Text>
+              <Text style={styles.valueDisplay}>
+                {answers[q.id as keyof typeof answers]}
+              </Text>
+              <Text style={styles.caption}>{q.high}</Text>
+            </View>
           </View>
         ))}
 
@@ -173,4 +196,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#999",
   },
   buttonText: { color: "white", textAlign: "center", fontWeight: "bold" },
+  labelContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: 300,
+    paddingHorizontal: 5,
+  },
+  caption: {
+    fontSize: 12,
+    color: "#666",
+  },
+  valueDisplay: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#007AFF",
+  },
 });

@@ -2,7 +2,7 @@
   "expo": {
     "name": "SmartFocus",
     "slug": "StressForm",
-    "version": "1.1",
+    "version": "1.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "stressform",
@@ -16,15 +16,11 @@
     },
     "autolinking": {
       "nativeModulesDir": "./modules",
-      "searchPaths": [
-        "./modules/screen-time-report"
-      ]
+      "searchPaths": ["./modules/screen-time-report"]
     },
     "android": {
       "package": "dev.gearturner.StressForm",
-      "permissions": [
-        "android.permission.PACKAGE_USAGE_STATS"
-      ],
+      "permissions": ["android.permission.PACKAGE_USAGE_STATS"],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -37,6 +33,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-notifications",
       [
         "expo-build-properties",
         {

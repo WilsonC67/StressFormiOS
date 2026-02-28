@@ -1,6 +1,18 @@
+import { useEffect } from "react";
 import { Stack } from "expo-router";
+import { configureNotifications, scheduleSurveyReminders } from "@/services/notifications";
 
 export default function RootLayout() {
+  useEffect(() => {
+    async function init() {
+      const allowed = await configureNotifications();
+      if (allowed) {
+        await scheduleSurveyReminders();
+      }
+    }
+    init();
+  }, []);
+  
   return (
     <Stack
       screenOptions={{
