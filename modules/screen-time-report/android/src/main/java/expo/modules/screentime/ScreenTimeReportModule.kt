@@ -76,10 +76,10 @@ class ScreenTimeReportModule : Module() {
         }
       }
 
-      // Convert to hours (rounded)
+      // Convert to minutes (rounded)
       val finalResult = mutableMapOf<String, Int>()
       for ((key, millis) in categoryMap) {
-        finalResult[key] = (millis / (1000.0 * 60 * 60)).roundToInt()
+        finalResult[key] = (millis / (1000.0 * 60)).roundToInt()
       }
 
       return@AsyncFunction finalResult

@@ -24,11 +24,11 @@ struct WeeklyCategoryUsageReport: DeviceActivityReportScene {
             }
         }
 
-        // Convert TimeInterval (seconds) to Hours (Int) rounded to nearest
+        // Convert TimeInterval (seconds) to Minutes (Int) rounded to nearest
         var finalData: [String: Int] = [:]
         for (name, seconds) in categoryMap {
-            let hours = Int((seconds / 3600.0).rounded())
-            finalData[name] = hours
+            let minutes = Int((seconds / 60.0).rounded())
+            finalData[name] = minutes
         }
 
         return WeeklyCategoryUsageConfiguration(categoryData: finalData)

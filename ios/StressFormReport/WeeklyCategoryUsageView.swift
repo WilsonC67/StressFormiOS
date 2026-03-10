@@ -26,7 +26,7 @@ struct WeeklyCategoryUsageView: View {
                         
                         Spacer()
                         
-                        Text("\(item.value) h")
+                        Text("\(item.value) m")
                             .font(.system(size: 13, weight: .bold, design: .rounded))
                             .foregroundStyle(.blue)
                     }

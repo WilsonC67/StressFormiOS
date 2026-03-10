@@ -42,7 +42,7 @@ export async function scheduleSurveyReminders() {
   for (const day of dailyDays) {
     await Notifications.scheduleNotificationAsync({
       content: {
-        title: "Daily Survey",
+        title: "Complete the Daily Survey",
         body: "Time for your daily check-in.",
         data: { url: "/daily-survey" },
       },
@@ -58,7 +58,7 @@ export async function scheduleSurveyReminders() {
   // Saturday (7): reminder for botj daily and weekly
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "You have 2 surveys.",
+      title: "Complete Both Surveys",
       body: "It's Saturday! Please complete both your daily and weekly surveys.",
       data: { url: "/welcome" },
     },
